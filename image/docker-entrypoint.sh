@@ -57,16 +57,16 @@ if [ ! -z ${CYPHT_API_LOGIN_KEY+x} ]; then sed -i "s/api_login_key=.*/api_login_
 # Modules
 
 enable_disable_module() {
-	local module=${1}
+    local module=${1}
     local setting=${2}
     # For some reason, "(; )?" isn't working but ";\{0,1\} \{0,1\}" does the same thing
     if [ ${setting} = enable ]
     then
-		sed -i "s/^;\{0,1\} \{0,1\}modules\[\]=${module}/modules[]=${module}/" ${CYPHT_CONFIG_FILE}
-		if [ ${module} = api_login ]; then sed -i "s/;\{0,1\} \{0,1\}api_login_key=/api_login_key=/" ${CYPHT_CONFIG_FILE}; fi
+        sed -i "s/^;\{0,1\} \{0,1\}modules\[\]=${module}/modules[]=${module}/" ${CYPHT_CONFIG_FILE}
+        if [ ${module} = api_login ]; then sed -i "s/;\{0,1\} \{0,1\}api_login_key=/api_login_key=/" ${CYPHT_CONFIG_FILE}; fi
     else
-		sed -i "s/^;\{0,1\} \{0,1\}modules\[\]=${module}/; modules[]=${module}/" ${CYPHT_CONFIG_FILE}
-		if [ ${module} = api_login ]; then sed -i "s/;\{0,1\} \{0,1\}api_login_key=/; api_login_key=/" ${CYPHT_CONFIG_FILE}; fi
+        sed -i "s/^;\{0,1\} \{0,1\}modules\[\]=${module}/; modules[]=${module}/" ${CYPHT_CONFIG_FILE}
+        if [ ${module} = api_login ]; then sed -i "s/;\{0,1\} \{0,1\}api_login_key=/; api_login_key=/" ${CYPHT_CONFIG_FILE}; fi
     fi
 }
 
