@@ -30,7 +30,6 @@ if [ ! -z ${CYPHT_USER_CONFIG_TYPE+x} ]; then sed -i "s/user_config_type=.*/user
 if [ ! -z ${CYPHT_USER_SETTINGS_DIR+x} ]; then sed -i "s!user_settings_dir=.*!user_settings_dir=${CYPHT_USER_SETTINGS_DIR}!" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_ATTACHMENT_DIR+x} ]; then sed -i "s/attachment_dir=.*/attachment_dir=${CYPHT_ATTACHMENT_DIR}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_APP_DATA_DIR+x} ]; then sed -i "s/app_data_dir=.*/app_data_dir=${CYPHT_APP_DATA_DIR}/" ${CYPHT_CONFIG_FILE}; fi
-if [ ! -z ${CYPHT_DISABLE_TLS+x} ]; then sed -i "s/disable_tls=.*/disable_tls=${CYPHT_DISABLE_TLS}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DISABLE_ORIGIN_CHECK+x} ]; then sed -i "s/disable_origin_check=.*/disable_origin_check=${CYPHT_DISABLE_ORIGIN_CHECK}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_ADMIN_USERS+x} ]; then sed -i "s/admin_users=.*/admin_users=${CYPHT_ADMIN_USERS}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_COOKIE_DOMAIN+x} ]; then sed -i "s/cookie_domain=.*/cookie_domain=${CYPHT_COOKIE_DOMAIN}/" ${CYPHT_CONFIG_FILE}; fi
@@ -43,8 +42,19 @@ if [ ! -z ${CYPHT_CSS_COMPRESS+x} ]; then sed -i "s/css_compress=.*/css_compress
 if [ ! -z ${CYPHT_ENABLE_MEMCACHED+x} ]; then sed -i "s/enable_memcached=.*/enable_memcached=${CYPHT_ENABLE_MEMCACHED}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_MEMCACHED_SERVER+x} ]; then sed -i "s/memcached_server=.*/memcached_server=${CYPHT_MEMCACHED_SERVER}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_MEMCACHED_PORT+x} ]; then sed -i "s/memcached_port=.*/memcached_port=${CYPHT_MEMCACHED_PORT}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_MEMCACHED_AUTH+x} ]; then sed -i "s/memcached_auth=.*/memcached_auth=${CYPHT_MEMCACHED_AUTH}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_MEMCACHED_USER+x} ]; then sed -i "s/memcached_user=.*/memcached_user=${CYPHT_MEMCACHED_USER}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_MEMCACHED_PASS+x} ]; then sed -i "s/memcached_pass=.*/memcached_pass=${CYPHT_MEMCACHED_PASS}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_ALLOW_LONG_SESSION+x} ]; then sed -i "s/allow_long_session=.*/allow_long_session=${CYPHT_ALLOW_LONG_SESSION}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_LONG_SESSION_LIFETIME+x} ]; then sed -i "s/long_session_lifetime=.*/long_session_lifetime=${CYPHT_LONG_SESSION_LIFETIME}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_ENCRYPT_AJAX_REQUESTS+x} ]; then sed -i "s/encrypt_ajax_requests=.*/encrypt_ajax_requests=${CYPHT_ENCRYPT_AJAX_REQUESTS}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_ENCRYPT_LOCAL_STORAGE+x} ]; then sed -i "s/encrypt_local_storage=.*/encrypt_local_storage=${CYPHT_ENCRYPT_LOCAL_STORAGE}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_DISABLE_IP_CHECK+x} ]; then sed -i "s/disable_ip_check=.*/disable_ip_check=${CYPHT_DISABLE_IP_CHECK}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_SINGLE_SERVER_MODE+x} ]; then sed -i "s/single_server_mode=.*/single_server_mode=${CYPHT_SINGLE_SERVER_MODE}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_DISABLE_EMPTY_SUPERGLOBALS+x} ]; then sed -i "s/disable_empty_superglobals=.*/disable_empty_superglobals=${CYPHT_DISABLE_EMPTY_SUPERGLOBALS}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_DISABLE_OPEN_BASEDIR+x} ]; then sed -i "s/disable_open_basedir=.*/disable_open_basedir=${CYPHT_DISABLE_OPEN_BASEDIR}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_DISABLE_INI_SETTINGS+x} ]; then sed -i "s/disable_ini_settings=.*/disable_ini_settings=${CYPHT_DISABLE_INI_SETTINGS}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_DISABLE_FINGERPRINT+x} ]; then sed -i "s/disable_fingerprint=.*/disable_fingerprint=${CYPHT_DISABLE_FINGERPRINT}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DB_CONNECTION_TYPE+x} ]; then sed -i "s/db_connection_type=.*/db_connection_type=${CYPHT_DB_CONNECTION_TYPE}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DB_HOST+x} ]; then sed -i "s/db_host=.*/db_host=${CYPHT_DB_HOST}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DB_SOCKET+x} ]; then sed -i "s/db_socket=.*/db_socket=${CYPHT_DB_SOCKET}/" ${CYPHT_CONFIG_FILE}; fi
