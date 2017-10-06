@@ -112,6 +112,44 @@ if [ ! -z ${CYPHT_MODULE_API_LOGIN+x} ]; then enable_disable_module api_login ${
 if [ ! -z ${CYPHT_MODULE_RECOVER_SETTINGS+x} ]; then enable_disable_module recover_settings ${CYPHT_MODULE_RECOVER_SETTINGS}; fi
 if [ ! -z ${CYPHT_MODULE_HELLO_WORLD+x} ]; then enable_disable_module hello_world ${CYPHT_MODULE_HELLO_WORLD}; fi
 
+# Defaults
+if [ ! -z ${CYPHT_DEFAULT_SETTING_NO_PASSWORD_SAVE+x} ]; then sed -i "s/; default_setting_no_password_save=.*/default_setting_no_password_save=${CYPHT_DEFAULT_SETTING_NO_PASSWORD_SAVE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_IMAP_PER_PAGE+x} ]; then sed -i "s/; default_setting_imap_per_page=.*/default_setting_imap_per_page=${CYPHT_DEFAULT_SETTING_IMAP_PER_PAGE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_SIMPLE_MSG_PARTS+x} ]; then sed -i "s/; default_setting_simple_msg_parts=.*/default_setting_simple_msg_parts=${CYPHT_DEFAULT_SETTING_SIMPLE_MSG_PARTS}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_MSG_PART_ICONS+x} ]; then sed -i "s/; default_setting_msg_part_icons=.*/default_setting_msg_part_icons=${CYPHT_DEFAULT_SETTING_MSG_PART_ICONS}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_TEXT_ONLY+x} ]; then sed -i "s/; default_setting_text_only=.*/default_setting_text_only=${CYPHT_DEFAULT_SETTING_TEXT_ONLY}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_SENT_PER_SOURCE+x} ]; then sed -i "s/; default_setting_sent_per_source=.*/default_setting_sent_per_source=${CYPHT_DEFAULT_SETTING_SENT_PER_SOURCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_SENT_SINCE+x} ]; then sed -i "s/; default_setting_sent_since=.*/default_setting_sent_since=${CYPHT_DEFAULT_SETTING_SENT_SINCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_SHOW_LIST_ICONS+x} ]; then sed -i "s/; default_setting_show_list_icons=.*/default_setting_show_list_icons=${CYPHT_DEFAULT_SETTING_SHOW_LIST_ICONS}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_START_PAGE+x} ]; then sed -i "s/; default_setting_start_page=.*/default_setting_start_page=${CYPHT_DEFAULT_SETTING_START_PAGE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_DISABLE_DELETE_PROMPT+x} ]; then sed -i "s/; default_setting_disable_delete_prompt=.*/default_setting_disable_delete_prompt=${CYPHT_DEFAULT_SETTING_DISABLE_DELETE_PROMPT}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_NO_FOLDER_ICONS+x} ]; then sed -i "s/; default_setting_no_folder_icons=.*/default_setting_no_folder_icons=${CYPHT_DEFAULT_SETTING_NO_FOLDER_ICONS}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_ALL_EMAIL_PER_SOURCE+x} ]; then sed -i "s/; default_setting_all_email_per_source=.*/default_setting_all_email_per_source=${CYPHT_DEFAULT_SETTING_ALL_EMAIL_PER_SOURCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_ALL_EMAIL_SINCE+x} ]; then sed -i "s/; default_setting_all_email_since=.*/default_setting_all_email_since=${CYPHT_DEFAULT_SETTING_ALL_EMAIL_SINCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_ALL_SINCE+x} ]; then sed -i "s/; default_setting_all_since=.*/default_setting_all_since=${CYPHT_DEFAULT_SETTING_ALL_SINCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_ALL_PER_SOURCE+x} ]; then sed -i "s/; default_setting_all_per_source=.*/default_setting_all_per_source=${CYPHT_DEFAULT_SETTING_ALL_PER_SOURCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_UNREAD_PER_SOURCE+x} ]; then sed -i "s/; default_setting_unread_per_source=.*/default_setting_unread_per_source=${CYPHT_DEFAULT_SETTING_UNREAD_PER_SOURCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_FLAGGED_PER_SOURCE+x} ]; then sed -i "s/; default_setting_flagged_per_source=.*/default_setting_flagged_per_source=${CYPHT_DEFAULT_SETTING_FLAGGED_PER_SOURCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_FLAGGED_SINCE+x} ]; then sed -i "s/; default_setting_flagged_since=.*/default_setting_flagged_since=${CYPHT_DEFAULT_SETTING_FLAGGED_SINCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_UNREAD_SINCE+x} ]; then sed -i "s/; default_setting_unread_since=.*/default_setting_unread_since=${CYPHT_DEFAULT_SETTING_UNREAD_SINCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_TIMEZONE+x} ]; then sed -i "s/; default_setting_timezone=.*/default_setting_timezone=${CYPHT_DEFAULT_SETTING_TIMEZONE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_LIST_STYLE+x} ]; then sed -i "s/; default_setting_list_style=.*/default_setting_list_style=${CYPHT_DEFAULT_SETTING_LIST_STYLE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_LANGUAGE+x} ]; then sed -i "s/; default_setting_language=.*/default_setting_language=${CYPHT_DEFAULT_SETTING_LANGUAGE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_UNREAD_EXCLUDE_FEEDS+x} ]; then sed -i "s/; default_setting_unread_exclude_feeds=.*/default_setting_unread_exclude_feeds=${CYPHT_DEFAULT_SETTING_UNREAD_EXCLUDE_FEEDS}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_FEED_LIMIT+x} ]; then sed -i "s/; default_setting_feed_limit=.*/default_setting_feed_limit=${CYPHT_DEFAULT_SETTING_FEED_LIMIT}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_FEED_SINCE+x} ]; then sed -i "s/; default_setting_feed_since=.*/default_setting_feed_since=${CYPHT_DEFAULT_SETTING_FEED_SINCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_SMTP_COMPOSE_TYPE+x} ]; then sed -i "s/; default_setting_smtp_compose_type=.*/default_setting_smtp_compose_type=${CYPHT_DEFAULT_SETTING_SMTP_COMPOSE_TYPE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_SMTP_AUTO_BCC+x} ]; then sed -i "s/; default_setting_smtp_auto_bcc=.*/default_setting_smtp_auto_bcc=${CYPHT_DEFAULT_SETTING_SMTP_AUTO_BCC}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_THEME+x} ]; then sed -i "s/; default_setting_theme=.*/default_setting_theme=${CYPHT_DEFAULT_SETTING_THEME}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_UNREAD_EXCLUDE_WORDPRESS+x} ]; then sed -i "s/; default_setting_unread_exclude_wordpress=.*/default_setting_unread_exclude_wordpress=${CYPHT_DEFAULT_SETTING_UNREAD_EXCLUDE_WORDPRESS}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_WORDPRESS_SINCE+x} ]; then sed -i "s/; default_setting_wordpress_since=.*/default_setting_wordpress_since=${CYPHT_DEFAULT_SETTING_WORDPRESS_SINCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_UNREAD_EXCLUDE_GITHUB+x} ]; then sed -i "s/; default_setting_unread_exclude_github=.*/default_setting_unread_exclude_github=${CYPHT_DEFAULT_SETTING_UNREAD_EXCLUDE_GITHUB}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_GITHUB_LIMIT+x} ]; then sed -i "s/; default_setting_github_limit=.*/default_setting_github_limit=${CYPHT_DEFAULT_SETTING_GITHUB_LIMIT}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_GITHUB_SINCE+x} ]; then sed -i "s/; default_setting_github_since=.*/default_setting_github_since=${CYPHT_DEFAULT_SETTING_GITHUB_SINCE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_INLINE_MESSAGE+x} ]; then sed -i "s/; default_setting_inline_message=.*/default_setting_inline_message=${CYPHT_DEFAULT_SETTING_INLINE_MESSAGE}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_ENABLE_KEYBOARD_SHORTCUTS+x} ]; then sed -i "s/; default_setting_enable_keyboard_shortcuts=.*/default_setting_enable_keyboard_shortcuts=${CYPHT_DEFAULT_SETTING_ENABLE_KEYBOARD_SHORTCUTS}/" config.ini; fi
+
+
 #
 # Wait for database to be ready then setup tables for sessions, authentication, and settings as needed
 #
