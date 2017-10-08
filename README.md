@@ -35,7 +35,7 @@ services:
   cypht:
     image: sailfrog/cypht-docker:latest
     volumes:
-      - ./cypht/users=/var/lib/hm3/users
+      - ./cypht/users:/var/lib/hm3/users
     ports:
       - "8080:80"
     environment:
@@ -48,7 +48,7 @@ services:
       - CYPHT_DB_PASS=cyhpht_password
 ```
 
-### Environmnt variables
+### Environment variables
 
 See [hm3.sample.ini](https://github.com/jasonmunro/cypht/blob/master/hm3.sample.ini) file for more information about each setting.
 
@@ -76,7 +76,7 @@ See [hm3.sample.ini](https://github.com/jasonmunro/cypht/blob/master/hm3.sample.
 * **CYPHT_USER_CONFIG_TYPE** : Where user settings are stored *(default : file)*
 * **CYPHT_USER_SETTINGS_DIR** : Directory for storing user settings (only used if user_config_type is file) *(default : /var/lib/hm3/users)*
 * **CYPHT_ATTACHMENT_DIR** : Directory for temporarily storing attachments of outgoing messages *(default : /var/lib/hm3/attachments)*
-* **CYPHT_APP_DATA_DIR** : Directory for storing module configuration files ( *(default : /var/lib/hm3/app_data)*
+* **CYPHT_APP_DATA_DIR** : Directory for storing module configuration files *(default : /var/lib/hm3/app_data)*
 * **CYPHT_DISABLE_ORIGIN_CHECK** : Disable origin header check *(default : false)*
 * **CYPHT_ADMIN_USERS** : Comma-delimited list of admin users receiving special rights *(default : blank)*
 * **CYPHT_COOKIE_DOMAIN** : Domain to be set in cookie domain property *(default : blank)*
@@ -103,7 +103,7 @@ See [hm3.sample.ini](https://github.com/jasonmunro/cypht/blob/master/hm3.sample.
 * **CYPHT_DISABLE_INI_SETTINGS** : Do not tweak ini settings for easier 3rd party integration *(default : false)*
 * **CYPHT_DISABLE_FINGERPRINT** : Do not user browser fingerprint for easier 3rd party integration *(default : false)*
 * **CYPHT_DB_CONNECTION_TYPE** : Database connection type if database is used for authentication, sessions, or user settings *(default : host)*
-* **CYPHT_DB_HOST** : Databae host or IP address (only used if db_connection_type is "host") *(default : 127.0.0.1)*
+* **CYPHT_DB_HOST** : Database host or IP address (only used if db_connection_type is "host") *(default : 127.0.0.1)*
 * **CYPHT_DB_SOCKET** : Database socket (only used if db_connection_type is "socket") *(default : /var/lib/mysqld/mysqld.sock)*
 * **CYPHT_DB_NAME** : Name of the database *(default : test)*
 * **CYPHT_DB_USER** : User for connecting to database *(default : test)*
