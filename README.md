@@ -31,7 +31,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root_password
       - MYSQL_DATABASE=cypht
       - MYSQL_USER=cypht
-      - MYSQL_PASSWORD=cyhpht_password
+      - MYSQL_PASSWORD=cypht_password
   cypht:
     image: sailfrog/cypht-docker:latest
     volumes:
@@ -45,7 +45,7 @@ services:
       - CYPHT_DB_HOST=db
       - CYPHT_DB_NAME=cypht
       - CYPHT_DB_USER=cypht
-      - CYPHT_DB_PASS=cyhpht_password
+      - CYPHT_DB_PASS=cypht_password
 ```
 
 ### Environment variables
