@@ -13,7 +13,7 @@ This is the official docker image of [Cypht](https://cypht.org/).
 ### Example docker-compose
 
 * Starts a database container to be for user authentication
-* Starts the Cypht container available on port 8080 of the host with ...
+* Starts the Cypht container available on port 80 of the host with ...
   * A local volume declared for persisting user settings across container reboots.
   * An initial user account for authentication
   * Environment variables for accessing the database container
@@ -37,7 +37,7 @@ services:
     volumes:
       - ./cypht/users:/var/lib/hm3/users
     ports:
-      - "8080:80"
+      - "80:80"
     environment:
       - CYPHT_AUTH_USERNAME=admin
       - CYPHT_AUTH_PASSWORD=admin_password
