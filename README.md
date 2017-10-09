@@ -120,7 +120,7 @@ See [hm3.sample.ini](https://github.com/jasonmunro/cypht/blob/master/hm3.sample.
 * **CYPHT_MODULE_2FA** : Enable/disable support for two-factor authentication using TOTP *(default : disable)*
 * **CYPHT_MODULE_SMTP** : Enable/disable support for outbound email via SMTP *(default : enable)*
 * **CYPHT_MODULE_ACCOUNT** : Enable/disable support for creating accounts and user password updates (only used if auth_type is DB) *(default : enable)*
-* **CYPHT_MODULE_IDLE_TIMER** : Enable/disable support for automatic login when idle *(default : enable)*
+* **CYPHT_MODULE_IDLE_TIMER** : Enable/disable support for automatic logout when idle *(default : enable)*
 * **CYPHT_MODULE_CALENDAR** : Enable/disable support for basic calendar *(default : enable)*
 * **CYPHT_MODULE_THEMES** : Enable/disable support for updating UI via css *(default : enable)*
 * **CYPHT_MODULE_NUX** : Enable/disable support for new user experience (common email services and development updates) *(default : enable)*
