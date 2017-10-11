@@ -6,13 +6,18 @@ WORKDIR "/var/www"
 
 RUN set -e \
     && apk add --no-cache \
+       supervisor \
+       nginx \
+       # GD
+       freetype libpng libjpeg-turbo \
+    && apk add --no-cache --virtual .build-deps \
        ca-certificates \
        wget \
        unzip \
-       supervisor \
-       nginx \
-       # memcached? \
-    && docker-php-ext-install pdo pdo_mysql \
+       # For GD (2fa module)
+       libpng-dev libjpeg-turbo-dev freetype-dev \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
+    && docker-php-ext-install gd pdo pdo_mysql \
     && mkdir ${CYPHT_DEST} \
     && cd ${CYPHT_DEST} \
     && mkdir /tmp/cypht-temp \
@@ -26,10 +31,7 @@ RUN set -e \
     && mv cypht-master/* ${CYPHT_DEST} \
     && cd /tmp \
     && rm -rf cypht-temp \
-    && apk del \
-       wget \
-       unzip \
-    && rm -rf /var/lib/apt/lists/*
+    && apk del .build-deps
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY supervisord.conf /etc/supervisord.conf
