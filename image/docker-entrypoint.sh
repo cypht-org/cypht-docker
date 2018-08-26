@@ -50,6 +50,7 @@ if [ ! -z ${CYPHT_LONG_SESSION_LIFETIME+x} ]; then sed -i "s/long_session_lifeti
 if [ ! -z ${CYPHT_ENCRYPT_AJAX_REQUESTS+x} ]; then sed -i "s/encrypt_ajax_requests=.*/encrypt_ajax_requests=${CYPHT_ENCRYPT_AJAX_REQUESTS}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_ENCRYPT_LOCAL_STORAGE+x} ]; then sed -i "s/encrypt_local_storage=.*/encrypt_local_storage=${CYPHT_ENCRYPT_LOCAL_STORAGE}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DISABLE_IP_CHECK+x} ]; then sed -i "s/disable_ip_check=.*/disable_ip_check=${CYPHT_DISABLE_IP_CHECK}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_ALLOW_EXTERNAL_IMAGE_SOURCES+x} ]; then sed -i "s/allow_external_image_sources=.*/allow_external_image_sources=${CYPHT_ALLOW_EXTERNAL_IMAGE_SOURCES}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_SINGLE_SERVER_MODE+x} ]; then sed -i "s/single_server_mode=.*/single_server_mode=${CYPHT_SINGLE_SERVER_MODE}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DISABLE_EMPTY_SUPERGLOBALS+x} ]; then sed -i "s/disable_empty_superglobals=.*/disable_empty_superglobals=${CYPHT_DISABLE_EMPTY_SUPERGLOBALS}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DISABLE_OPEN_BASEDIR+x} ]; then sed -i "s/disable_open_basedir=.*/disable_open_basedir=${CYPHT_DISABLE_OPEN_BASEDIR}/" ${CYPHT_CONFIG_FILE}; fi

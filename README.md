@@ -97,6 +97,7 @@ See [hm3.sample.ini](https://github.com/jasonmunro/cypht/blob/master/hm3.sample.
 * **CYPHT_ENCRYPT_AJAX_REQUESTS** : Encrypt AJAX responses (adds 70KB to page load size) *(default : blank)*
 * **CYPHT_ENCRYPT_LOCAL_STORAGE** : Encrypt browser local storage (adds 70KB to page load size) *(default : blank)*
 * **CYPHT_DISABLE_IP_CHECK** : Disable automatic logout if IP address changes *(default : false)*
+* **CYPHT_ALLOW_EXTERNAL_IMAGE_SOURCES** : Allow external images to be loaded when viewing an HTML formatted E-mail message *(default : false)*
 * **CYPHT_SINGLE_SERVER_MODE** : Restrict Cypht to single email source and default SMTP server *(default : false)*
 * **CYPHT_DISABLE_EMPTY_SUPERGLOBALS** : Do not empty PHP super globals for easier 3rd party integration *(default : false)*
 * **CYPHT_DISABLE_OPEN_BASEDIR** : Do not apply open basedir restrictions for easier 3rd party integration *(default : false)*
