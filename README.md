@@ -46,13 +46,14 @@ services:
       - CYPHT_DB_NAME=cypht
       - CYPHT_DB_USER=cypht
       - CYPHT_DB_PASS=cypht_password
+      - CYPHT_SESSION_TYPE=DB
 ```
 
 ### Environment variables
 
 See [hm3.sample.ini](https://github.com/jasonmunro/cypht/blob/master/hm3.sample.ini) file for more information about each setting.
 
-* **CYPHT_SESSION_TYPE** : How logged in state is maintained *(default : PHP)*
+* **CYPHT_SESSION_TYPE** : How logged in state is maintained *(default : PHP - Not sure why yet but PHP sessions are not working in this image right now, but DB sessions do so I added it to the example docker compose above) *
 * **CYPHT_AUTH_TYPE** : Type of user authentication *(default : DB)*
 * **CYPHT_AUTH_USERNAME** : User account to be created in database for authentication *(default : blank)*
 * **CYPHT_AUTH_PASSWORD** : Password for the user *(default : blank)*
