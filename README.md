@@ -143,6 +143,7 @@ See [hm3.sample.ini](https://github.com/jasonmunro/cypht/blob/master/hm3.sample.
 * **CYPHT_API_LOGIN_KEY** : API key for api login *(default : blank)*
 * **CYPHT_MODULE_RECOVER_SETTINGS** : Enable/disable support for recovering encrypted user settings after IMAP/POP3 password change *(default : disable)*
 * **CYPHT_MODULE_HELLO_WORLD** : Enable/disable support for the example module set with lots of comments *(default : disable)*
+* **CYPHT_MODULE_DESKTOP_NOTIFICATIONS** : Enable/disable support for desktop notifications *(default : disable)*
 * **CYPHT_DEFAULT_SETTING_NO_PASSWORD_SAVE** : Default for saving passwords between logins *(default : false)*
 * **CYPHT_DEFAULT_SETTING_IMAP_PER_PAGE** : Default for number of messages per page for IMAP folders *(default : 20)*
 * **CYPHT_DEFAULT_SETTING_SIMPLE_MSG_PARTS** : Default for IMAP message structure detail on message view page *(default : false)*
