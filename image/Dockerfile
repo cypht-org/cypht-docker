@@ -8,6 +8,7 @@ RUN set -e \
     && apk add --no-cache \
        supervisor \
        nginx \
+       composer \
        # GD
        freetype libpng libjpeg-turbo \
     && apk add --no-cache --virtual .build-deps \
@@ -31,7 +32,9 @@ RUN set -e \
     && mv cypht-master/* ${CYPHT_DEST} \
     && cd /tmp \
     && rm -rf cypht-temp \
-    && apk del .build-deps
+    && apk del .build-deps \
+    && cd ${CYPHT_DEST} \
+    && composer install
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY supervisord.conf /etc/supervisord.conf

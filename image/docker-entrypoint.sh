@@ -112,6 +112,7 @@ if [ ! -z ${CYPHT_MODULE_DYNAMIC_LOGIN+x} ]; then enable_disable_module dynamic_
 if [ ! -z ${CYPHT_MODULE_API_LOGIN+x} ]; then enable_disable_module api_login ${CYPHT_MODULE_API_LOGIN}; fi
 if [ ! -z ${CYPHT_MODULE_RECOVER_SETTINGS+x} ]; then enable_disable_module recover_settings ${CYPHT_MODULE_RECOVER_SETTINGS}; fi
 if [ ! -z ${CYPHT_MODULE_HELLO_WORLD+x} ]; then enable_disable_module hello_world ${CYPHT_MODULE_HELLO_WORLD}; fi
+if [ ! -z ${CYPHT_MODULE_DESKTOP_NOTIFICATIONS+x} ]; then enable_disable_module desktop_notifications ${CYPHT_MODULE_DESKTOP_NOTIFICATIONS}; fi
 
 # Defaults
 if [ ! -z ${CYPHT_DEFAULT_SETTING_NO_PASSWORD_SAVE+x} ]; then sed -i "s/; default_setting_no_password_save=.*/default_setting_no_password_save=${CYPHT_DEFAULT_SETTING_NO_PASSWORD_SAVE}/" config.ini; fi
