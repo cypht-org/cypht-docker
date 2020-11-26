@@ -35,6 +35,8 @@ RUN set -e \
     && apk del .build-deps \
     && cd ${CYPHT_DEST} \
     && composer install
+    && sed -i 's/post_max_size = 8M/post_max_size = 80M/g' /etc/php7/php.ini \
+    && sed -i 's/upload_max_filesize = 2M/upload_max_filesize = 80M/g' /etc/php7/php.ini
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY supervisord.conf /etc/supervisord.conf
