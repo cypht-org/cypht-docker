@@ -34,7 +34,9 @@ RUN set -e \
     && rm -rf cypht-temp \
     && apk del .build-deps \
     && cd ${CYPHT_DEST} \
-    && composer install
+    && composer install \
+    && echo "post_max_size = 80M" >>  /usr/local/etc/php/php.ini \
+    && echo "upload_max_filesize = 80M" >> /usr/local/etc/php/php.ini
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY supervisord.conf /etc/supervisord.conf

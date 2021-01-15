@@ -194,6 +194,10 @@ attachment_dir=$(sed -n 's/attachment_dir=//p' ${CYPHT_CONFIG_FILE})
 mkdir -p ${attachment_dir}
 chown www-data:www-data ${attachment_dir}
 
+# Nginx Attachment Location
+mkdir -p /var/tmp/nginx
+chown www-data:www-data /var/tmp/nginx
+
 # Application Data Location - create directory
 app_data_dir=$(sed -n 's/app_data_dir=//p' ${CYPHT_CONFIG_FILE})
 mkdir -p ${app_data_dir}
