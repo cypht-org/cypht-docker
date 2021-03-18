@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CYPHT_CONFIG_FILE=/usr/local/share/cypht/hm3.ini
+CYPHT_CONFIG_FILE=${CYPHT_CONFIG_FILE:-/usr/local/share/cypht/hm3.ini}
 
 #
 # Update ini file based on environment variables (only if the specific environment variable is set)
@@ -202,14 +202,14 @@ chown www-data:www-data ${app_data_dir}
 #
 # Generate the run-time configuration
 #
-cd /usr/local/share/cypht
+cd ${CYPHT_DEST}
 php ./scripts/config_gen.php
 
 #
 # Enable the program in the web-server
 #
 rm -r /var/www
-ln -s /usr/local/share/cypht/site /var/www
+ln -s ${CYPHT_DEST}/site /var/www
 
 #
 # Create user account in database (or change password if user already exists)

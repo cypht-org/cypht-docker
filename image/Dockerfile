@@ -1,6 +1,6 @@
 FROM php:7.1-fpm-alpine
 
-ENV CYPHT_DEST "/usr/local/share/cypht"
+ARG CYPHT_DEST="/usr/local/share/cypht"
 
 WORKDIR "/var/www"
 
@@ -46,6 +46,9 @@ RUN set -ex \
     && ln -sf /dev/stderr /var/log/nginx/error.log \
     && chmod 700 /tmp/cypht_setup_database.php \
     && chmod +x /usr/local/bin/docker-entrypoint.sh
+
+ENV CYPHT_DEST=${CYPHT_DEST}
+ENV CYPHT_CONFIG_FILE=${CYPHT_DEST}/hm3.ini
 
 EXPOSE 80 443
 
