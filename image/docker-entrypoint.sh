@@ -34,6 +34,7 @@ if [ ! -z ${CYPHT_DISABLE_ORIGIN_CHECK+x} ]; then sed -i "s/disable_origin_check
 if [ ! -z ${CYPHT_ADMIN_USERS+x} ]; then sed -i "s/admin_users=.*/admin_users=${CYPHT_ADMIN_USERS}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_COOKIE_DOMAIN+x} ]; then sed -i "s/cookie_domain=.*/cookie_domain=${CYPHT_COOKIE_DOMAIN}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DEFAULT_EMAIL_DOMAIN+x} ]; then sed -i "s/default_email_domain=.*/default_email_domain=${CYPHT_DEFAULT_EMAIL_DOMAIN}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_AUTOCREATE_PROFILE+x} ]; then sed -i "s/autocreate_profile=.*/autocreate_profile=${CYPHT_AUTOCREATE_PROFILE}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_REDIRECT_AFTER_LOGIN+x} ]; then sed -i "s/redirect_after_login=.*/redirect_after_login=${CYPHT_REDIRECT_AFTER_LOGIN}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_APP_NAME+x} ]; then sed -i "s/app_name=.*/app_name=${CYPHT_APP_NAME}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DEFAULT_LANGUAGE+x} ]; then sed -i "s/default_language=.*/default_language=${CYPHT_DEFAULT_LANGUAGE}/" ${CYPHT_CONFIG_FILE}; fi
@@ -67,6 +68,7 @@ if [ ! -z ${CYPHT_DB_HOST+x} ]; then sed -i "s/db_host=.*/db_host=${CYPHT_DB_HOS
 if [ ! -z ${CYPHT_DB_SOCKET+x} ]; then sed -i "s/db_socket=.*/db_socket=${CYPHT_DB_SOCKET}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DB_NAME+x} ]; then sed -i "s/db_name=.*/db_name=${CYPHT_DB_NAME}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DB_USER+x} ]; then sed -i "s/db_user=.*/db_user=${CYPHT_DB_USER}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_DB_PORT+x} ]; then sed -i "s/db_port=.*/db_port=${CYPHT_DB_PORT}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DB_PASS+x} ]; then sed -i "s/db_pass=.*/db_pass=${CYPHT_DB_PASS}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DB_DRIVER+x} ]; then sed -i "s/db_driver=.*/db_driver=${CYPHT_DB_DRIVER}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_API_LOGIN_KEY+x} ]; then sed -i "s/api_login_key=.*/api_login_key=${CYPHT_API_LOGIN_KEY}/" ${CYPHT_CONFIG_FILE}; fi
@@ -89,6 +91,7 @@ enable_disable_module() {
 
 if [ ! -z ${CYPHT_MODULE_CORE+x} ]; then enable_disable_module core ${CYPHT_MODULE_CORE}; fi
 if [ ! -z ${CYPHT_MODULE_CONTACTS+x} ]; then enable_disable_module contacts ${CYPHT_MODULE_CONTACTS}; fi
+if [ ! -z ${CYPHT_MODULE_CARDDAV_CONTACTS+x} ]; then enable_disable_module carddav_contacts ${CYPHT_MODULE_CARDDAV_CONTACTS}; fi
 if [ ! -z ${CYPHT_MODULE_LOCAL_CONTACTS+x} ]; then enable_disable_module local_contacts ${CYPHT_MODULE_LOCAL_CONTACTS}; fi
 if [ ! -z ${CYPHT_MODULE_LDAP_CONTACTS+x} ]; then enable_disable_module ldap_contacts ${CYPHT_MODULE_LDAP_CONTACTS}; fi
 if [ ! -z ${CYPHT_MODULE_GMAIL_CONTACTS+x} ]; then enable_disable_module gmail_contacts ${CYPHT_MODULE_GMAIL_CONTACTS}; fi
@@ -166,6 +169,7 @@ auth_type=$(sed -n 's/auth_type=//p' ${CYPHT_CONFIG_FILE})
 user_config_type=$(sed -n 's/user_config_type=//p' ${CYPHT_CONFIG_FILE})
 db_host=$(sed -n 's/db_host=//p' ${CYPHT_CONFIG_FILE})
 db_name=$(sed -n 's/db_name=//p' ${CYPHT_CONFIG_FILE})
+db_port=$(sed -n 's/db_port=//p' ${CYPHT_CONFIG_FILE})
 db_user=$(sed -n 's/db_user=//p' ${CYPHT_CONFIG_FILE})
 db_pass=$(sed -n 's/db_pass=//p' ${CYPHT_CONFIG_FILE})
 db_driver=$(sed -n 's/db_driver=//p' ${CYPHT_CONFIG_FILE})
@@ -177,6 +181,7 @@ then
     sed -i "s/CYPHT_DB_HOST/${db_host}/" /tmp/cypht_setup_database.php
     sed -i "s/CYPHT_DB_NAME/${db_name}/" /tmp/cypht_setup_database.php
     sed -i "s/CYPHT_DB_USER/${db_user}/" /tmp/cypht_setup_database.php
+    sed -i "s/CYPHT_DB_PORT/${db_port}/" /tmp/cypht_setup_database.php
     sed -i "s/CYPHT_DB_PASS/${db_pass}/" /tmp/cypht_setup_database.php
     sed -i "s/CYPHT_DB_DRIVER/${db_driver}/" /tmp/cypht_setup_database.php
     php /tmp/cypht_setup_database.php

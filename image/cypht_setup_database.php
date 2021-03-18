@@ -6,7 +6,7 @@ $user_config_type = CYPHT_USER_CONFIG_TYPE;
 $db_driver = CYPHT_DB_DRIVER;
 while(!$connected) {
     try{
-    $conn = new pdo('CYPHT_DB_DRIVER:host=CYPHT_DB_HOST;dbname=CYPHT_DB_NAME', 'CYPHT_DB_USER', 'CYPHT_DB_PASS');
+    $conn = new pdo('CYPHT_DB_DRIVER:host=CYPHT_DB_HOST;port=CYPHT_DB_PORT;dbname=CYPHT_DB_NAME', 'CYPHT_DB_USER', 'CYPHT_DB_PASS');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     printf("Database connection successful ...\n");
         $connected = true;
