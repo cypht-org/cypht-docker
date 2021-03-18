@@ -39,6 +39,12 @@ if [ ! -z ${CYPHT_APP_NAME+x} ]; then sed -i "s/app_name=.*/app_name=${CYPHT_APP
 if [ ! -z ${CYPHT_DEFAULT_LANGUAGE+x} ]; then sed -i "s/default_language=.*/default_language=${CYPHT_DEFAULT_LANGUAGE}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_JS_COMPRESS+x} ]; then sed -i "s/js_compress=.*/js_compress=${CYPHT_JS_COMPRESS}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_CSS_COMPRESS+x} ]; then sed -i "s/css_compress=.*/css_compress=${CYPHT_CSS_COMPRESS}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_ENABLE_REDIS+x} ]; then sed -i "s/enable_redis=.*/enable_redis=${CYPHT_ENABLE_REDIS}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_REDIS_SERVER+x} ]; then sed -i "s/redis_server=.*/redis_server=${CYPHT_REDIS_SERVER}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_REDIS_PORT+x} ]; then sed -i "s/redis_port=.*/redis_port=${CYPHT_REDIS_PORT}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_REDIS_INDEX+x} ]; then sed -i "s/redis_index=.*/redis_index=${CYPHT_REDIS_INDEX}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_REDIS_PASS+x} ]; then sed -i "s/redis_pass=.*/redis_pass=${CYPHT_REDIS_PASS}/" ${CYPHT_CONFIG_FILE}; fi
+if [ ! -z ${CYPHT_REDIS_SOCKET+x} ]; then sed -i "s/redis_socket=.*/redis_socket=${CYPHT_REDIS_SOCKET}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_ENABLE_MEMCACHED+x} ]; then sed -i "s/enable_memcached=.*/enable_memcached=${CYPHT_ENABLE_MEMCACHED}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_MEMCACHED_SERVER+x} ]; then sed -i "s/memcached_server=.*/memcached_server=${CYPHT_MEMCACHED_SERVER}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_MEMCACHED_PORT+x} ]; then sed -i "s/memcached_port=.*/memcached_port=${CYPHT_MEMCACHED_PORT}/" ${CYPHT_CONFIG_FILE}; fi
