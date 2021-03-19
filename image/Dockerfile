@@ -1,6 +1,7 @@
 FROM php:7.1-fpm-alpine
 
-ENV CYPHT_DEST "/usr/local/share/cypht"
+ARG CYPHT_DEST="/usr/local/share/cypht"
+ARG DB_DRIVERS="pdo_mysql"
 
 WORKDIR "/var/www"
 
@@ -17,8 +18,9 @@ RUN set -e \
        unzip \
        # For GD (2fa module)
        libpng-dev libjpeg-turbo-dev freetype-dev \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
-    && docker-php-ext-install gd pdo pdo_mysql \
+    && echo $DB_DRIVERS | grep -q pdo_pgsql && apk add postgresql-dev \
+    ; docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
+    && docker-php-ext-install gd pdo ${DB_DRIVERS} \
     && mkdir ${CYPHT_DEST} \
     && cd ${CYPHT_DEST} \
     && mkdir /tmp/cypht-temp \
@@ -46,6 +48,9 @@ RUN set -ex \
     && ln -sf /dev/stderr /var/log/nginx/error.log \
     && chmod 700 /tmp/cypht_setup_database.php \
     && chmod +x /usr/local/bin/docker-entrypoint.sh
+
+ENV CYPHT_DEST=${CYPHT_DEST}
+ENV CYPHT_CONFIG_FILE=${CYPHT_DEST}/hm3.ini
 
 EXPOSE 80 443
 
