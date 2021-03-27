@@ -9,6 +9,7 @@ RUN set -e \
        supervisor \
        nginx \
        composer \
+       postgresql-dev \
        # GD
        freetype libpng libjpeg-turbo \
     && apk add --no-cache --virtual .build-deps \
@@ -18,7 +19,7 @@ RUN set -e \
        # For GD (2fa module)
        libpng-dev libjpeg-turbo-dev freetype-dev \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
-    && docker-php-ext-install gd pdo pdo_mysql \
+    && docker-php-ext-install gd pdo pdo_mysql pdo_pgsql \
     && mkdir ${CYPHT_DEST} \
     && cd ${CYPHT_DEST} \
     && mkdir /tmp/cypht-temp \
