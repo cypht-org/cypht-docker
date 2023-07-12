@@ -23,7 +23,7 @@ RUN set -e \
     && cd ${CYPHT_DEST} \
     && mkdir /tmp/cypht-temp \
     && cd /tmp/cypht-temp \
-    && wget https://github.com/jasonmunro/cypht/archive/master.zip \
+    && wget https://github.com/cypht-org/cypht/archive/master.zip \
     && unzip master.zip \
     && cp cypht-master/hm3.sample.ini cypht-master/hm3.ini \
     && find cypht-master -type d -print | xargs chmod 755 \
