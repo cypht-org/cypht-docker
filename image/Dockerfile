@@ -1,4 +1,4 @@
-FROM php:7.1-fpm-alpine
+FROM php:7.4.33-fpm-alpine
 
 ENV CYPHT_DEST "/usr/local/share/cypht"
 
@@ -11,13 +11,14 @@ RUN set -e \
        composer \
        # GD
        freetype libpng libjpeg-turbo \
+       php-session php-fileinfo \
     && apk add --no-cache --virtual .build-deps \
        ca-certificates \
        wget \
        unzip \
        # For GD (2fa module)
        libpng-dev libjpeg-turbo-dev freetype-dev \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
+    && docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
     && docker-php-ext-install gd pdo pdo_mysql \
     && mkdir ${CYPHT_DEST} \
     && cd ${CYPHT_DEST} \
@@ -34,6 +35,7 @@ RUN set -e \
     && rm -rf cypht-temp \
     && apk del .build-deps \
     && cd ${CYPHT_DEST} \
+    && composer self-update --2 \
     && composer install
 
 COPY nginx.conf /etc/nginx/nginx.conf
