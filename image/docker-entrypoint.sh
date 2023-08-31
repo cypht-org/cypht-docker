@@ -194,6 +194,9 @@ attachment_dir=$(sed -n 's/attachment_dir=//p' ${CYPHT_CONFIG_FILE})
 mkdir -p ${attachment_dir}
 chown www-data:www-data ${attachment_dir}
 
+# Change /var/lib/nginx owner from root to www-data to avoid "permission denied" error.
+chown -R www-data:www-data /var/lib/nginx
+
 # Application Data Location - create directory
 app_data_dir=$(sed -n 's/app_data_dir=//p' ${CYPHT_CONFIG_FILE})
 mkdir -p ${app_data_dir}

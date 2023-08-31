@@ -11,7 +11,7 @@ RUN set -e \
        composer \
        # GD
        freetype libpng libjpeg-turbo \
-       php-session php-fileinfo \
+       php-session php-fileinfo  php-dom php-xml libxml2-dev php-xmlwriter php-tokenizer \
     && apk add --no-cache --virtual .build-deps \
        ca-certificates \
        wget \
@@ -36,7 +36,9 @@ RUN set -e \
     && apk del .build-deps \
     && cd ${CYPHT_DEST} \
     && composer self-update --2 \
-    && composer install
+    && composer install \
+    && echo "post_max_size = 60M" >> /usr/local/etc/php/php.ini \
+    && echo "upload_max_filesize = 50M" >> /usr/local/etc/php/php.ini
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY supervisord.conf /etc/supervisord.conf
