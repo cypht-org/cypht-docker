@@ -17,10 +17,6 @@ if [ ! -z ${CYPHT_IMAP_AUTH_NAME+x} ]; then sed -i "s/imap_auth_name=.*/imap_aut
 if [ ! -z ${CYPHT_IMAP_AUTH_SERVER+x} ]; then sed -i "s/imap_auth_server=.*/imap_auth_server=${CYPHT_IMAP_AUTH_SERVER}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_IMAP_AUTH_PORT+x} ]; then sed -i "s/imap_auth_port=.*/imap_auth_port=${CYPHT_IMAP_AUTH_PORT}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_IMAP_AUTH_TLS+x} ]; then sed -i "s/imap_auth_tls=.*/imap_auth_tls=${CYPHT_IMAP_AUTH_TLS}/" ${CYPHT_CONFIG_FILE}; fi
-if [ ! -z ${CYPHT_POP3_AUTH_NAME+x} ]; then sed -i "s/pop3_auth_name=.*/pop3_auth_name=${CYPHT_POP3_AUTH_NAME}/" ${CYPHT_CONFIG_FILE}; fi
-if [ ! -z ${CYPHT_POP3_AUTH_SERVER+x} ]; then sed -i "s/pop3_auth_server=.*/pop3_auth_server=${CYPHT_POP3_AUTH_SERVER}/" ${CYPHT_CONFIG_FILE}; fi
-if [ ! -z ${CYPHT_POP3_AUTH_PORT+x} ]; then sed -i "s/pop3_auth_port=.*/pop3_auth_port=${CYPHT_POP3_AUTH_PORT}/" ${CYPHT_CONFIG_FILE}; fi
-if [ ! -z ${CYPHT_POP3_AUTH_TLS+x} ]; then sed -i "s/pop3_auth_tls=.*/pop3_auth_tls=${CYPHT_POP3_AUTH_TLS}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DEFAULT_SMTP_NAME+x} ]; then sed -i "s/default_smtp_name=.*/default_smtp_name=${CYPHT_DEFAULT_SMTP_NAME}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DEFAULT_SMTP_SERVER+x} ]; then sed -i "s/default_smtp_server=.*/default_smtp_server=${CYPHT_DEFAULT_SMTP_SERVER}/" ${CYPHT_CONFIG_FILE}; fi
 if [ ! -z ${CYPHT_DEFAULT_SMTP_PORT+x} ]; then sed -i "s/default_smtp_port=.*/default_smtp_port=${CYPHT_DEFAULT_SMTP_PORT}/" ${CYPHT_CONFIG_FILE}; fi
@@ -87,7 +83,6 @@ if [ ! -z ${CYPHT_MODULE_LOCAL_CONTACTS+x} ]; then enable_disable_module local_c
 if [ ! -z ${CYPHT_MODULE_LDAP_CONTACTS+x} ]; then enable_disable_module ldap_contacts ${CYPHT_MODULE_LDAP_CONTACTS}; fi
 if [ ! -z ${CYPHT_MODULE_GMAIL_CONTACTS+x} ]; then enable_disable_module gmail_contacts ${CYPHT_MODULE_GMAIL_CONTACTS}; fi
 if [ ! -z ${CYPHT_MODULE_FEEDS+x} ]; then enable_disable_module feeds ${CYPHT_MODULE_FEEDS}; fi
-if [ ! -z ${CYPHT_MODULE_POP3+x} ]; then enable_disable_module pop3 ${CYPHT_MODULE_POP3}; fi
 if [ ! -z ${CYPHT_MODULE_IMAP+x} ]; then enable_disable_module imap ${CYPHT_MODULE_IMAP}; fi
 if [ ! -z ${CYPHT_MODULE_2FA+x} ]; then enable_disable_module 2fa ${CYPHT_MODULE_2FA}; fi
 if [ ! -z ${CYPHT_MODULE_SMTP+x} ]; then enable_disable_module smtp ${CYPHT_MODULE_SMTP}; fi
