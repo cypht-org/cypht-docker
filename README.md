@@ -65,15 +65,11 @@ See [hm3.sample.ini](https://github.com/cypht-org/cypht/blob/master/hm3.sample.i
 * **CYPHT_IMAP_AUTH_SERVER** : IMAP server (only used if auth_type is IMAP) *(default : localhost)*
 * **CYPHT_IMAP_AUTH_PORT** : IMAP server port (only used if auth_type is IMAP) *(default : 143)*
 * **CYPHT_IMAP_AUTH_TLS** : IMAP server encryption (only used if auth_type is IMAP) *(default : blank)*
-* **CYPHT_POP3_AUTH_NAME** : POP3 server name/label in UI (only used if auth_type is POP3) *(default : localhost)*
-* **CYPHT_POP3_AUTH_SERVER** : POP3 server (only used if auth_type is POP3) *(default : localhost)*
-* **CYPHT_POP3_AUTH_PORT** : POP3 server port (only used if auth_type is POP3) *(default : 110)*
-* **CYPHT_POP3_AUTH_TLS** : POP3 server encryption (only used if auth_type is POP3) *(default : blank)*
-* **CYPHT_DEFAULT_SMTP_NAME** : Default SMTP server name/label in UI for all users (only makes sense if auth_type is IMAP or POP3) *(default : blank)*
-* **CYPHT_DEFAULT_SMTP_SERVER** : Default SMTP server for all users (only makes sense if auth_type is IMAP or POP3) *(default : blank)*
-* **CYPHT_DEFAULT_SMTP_PORT** : Default SMTP server port for all users (only makes sense if auth_type is IMAP or POP3) *(default : blank)*
-* **CYPHT_DEFAULT_SMTP_TLS** : Default SMTP server encryption for all users (only makes sense if auth_type is IMAP or POP3) *(default : blank)*
-* **CYPHT_DEFAULT_SMTP_NO_AUTH** : Whether or not default SMTP server for all users requires authentication (only makes sense if auth_type is IMAP or POP3) *(default : blank)*
+* **CYPHT_DEFAULT_SMTP_NAME** : Default SMTP server name/label in UI for all users (only makes sense if auth_type is IMAP ) *(default : blank)*
+* **CYPHT_DEFAULT_SMTP_SERVER** : Default SMTP server for all users (only makes sense if auth_type is IMAP ) *(default : blank)*
+* **CYPHT_DEFAULT_SMTP_PORT** : Default SMTP server port for all users (only makes sense if auth_type is IMAP ) *(default : blank)*
+* **CYPHT_DEFAULT_SMTP_TLS** : Default SMTP server encryption for all users (only makes sense if auth_type is IMAP ) *(default : blank)*
+* **CYPHT_DEFAULT_SMTP_NO_AUTH** : Whether or not default SMTP server for all users requires authentication (only makes sense if auth_type is IMAP ) *(default : blank)*
 * **CYPHT_USER_CONFIG_TYPE** : Where user settings are stored *(default : file)*
 * **CYPHT_USER_SETTINGS_DIR** : Directory for storing user settings (only used if user_config_type is file) *(default : /var/lib/hm3/users)*
 * **CYPHT_ATTACHMENT_DIR** : Directory for temporarily storing attachments of outgoing messages *(default : /var/lib/hm3/attachments)*
@@ -117,7 +113,6 @@ See [hm3.sample.ini](https://github.com/cypht-org/cypht/blob/master/hm3.sample.i
 * **CYPHT_MODULE_LDAP_CONTACTS** : Enable/disable support for LDAP server contacts *(default : disable)*
 * **CYPHT_MODULE_GMAIL_CONTACTS** : Enable/disable support for read-only Gmail contacts *(default : disable)*
 * **CYPHT_MODULE_FEEDS** : Enable/disable support for RSS/ATOM feed *(default : enable)*
-* **CYPHT_MODULE_POP3** : Enable/disable support for POP3 email accounts *(default : enable)*
 * **CYPHT_MODULE_IMAP** : Enable/disable support for IMAP email accounts *(default : enable)*
 * **CYPHT_MODULE_2FA** : Enable/disable support for two-factor authentication using TOTP *(default : disable)*
 * **CYPHT_MODULE_SMTP** : Enable/disable support for outbound email via SMTP *(default : enable)*
@@ -141,7 +136,7 @@ See [hm3.sample.ini](https://github.com/cypht-org/cypht/blob/master/hm3.sample.i
 * **CYPHT_MODULE_DYNAMIC_LOGIN** : Enable/disable support for authenticating against populate mail services (only used if auth_type is dynamic) *(default : disable)*
 * **CYPHT_MODULE_API_LOGIN** : Enable/disable support for API based login that returns JSON response *(default : disable)*
 * **CYPHT_API_LOGIN_KEY** : API key for api login *(default : blank)*
-* **CYPHT_MODULE_RECOVER_SETTINGS** : Enable/disable support for recovering encrypted user settings after IMAP/POP3 password change *(default : disable)*
+* **CYPHT_MODULE_RECOVER_SETTINGS** : Enable/disable support for recovering encrypted user settings after IMAP password change *(default : disable)*
 * **CYPHT_MODULE_HELLO_WORLD** : Enable/disable support for the example module set with lots of comments *(default : disable)*
 * **CYPHT_MODULE_DESKTOP_NOTIFICATIONS** : Enable/disable support for desktop notifications *(default : disable)*
 * **CYPHT_DEFAULT_SETTING_NO_PASSWORD_SAVE** : Default for saving passwords between logins *(default : false)*
