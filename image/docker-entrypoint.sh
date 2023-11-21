@@ -102,6 +102,7 @@ if [ ! -z ${CYPHT_MODULE_PROFILES+x} ]; then enable_disable_module profiles ${CY
 if [ ! -z ${CYPHT_MODULE_INLINE_MESSAGE+x} ]; then enable_disable_module inline_message ${CYPHT_MODULE_INLINE_MESSAGE}; fi
 if [ ! -z ${CYPHT_MODULE_IMAP_FOLDERS+x} ]; then enable_disable_module imap_folders ${CYPHT_MODULE_IMAP_FOLDERS}; fi
 if [ ! -z ${CYPHT_MODULE_KEYBOARD_SHORTCUTS+x} ]; then enable_disable_module keyboard_shortcuts ${CYPHT_MODULE_KEYBOARD_SHORTCUTS}; fi
+if [ ! -z ${CYPHT_MODULE_SIEVEFILTERS+x} ]; then enable_disable_module sievefilters ${CYPHT_MODULE_SIEVEFILTERS}; fi
 if [ ! -z ${CYPHT_MODULE_SITE+x} ]; then enable_disable_module site ${CYPHT_MODULE_SITE}; fi
 if [ ! -z ${CYPHT_MODULE_DYNAMIC_LOGIN+x} ]; then enable_disable_module dynamic_login ${CYPHT_MODULE_DYNAMIC_LOGIN}; fi
 if [ ! -z ${CYPHT_MODULE_API_LOGIN+x} ]; then enable_disable_module api_login ${CYPHT_MODULE_API_LOGIN}; fi
@@ -145,6 +146,7 @@ if [ ! -z ${CYPHT_DEFAULT_SETTING_GITHUB_LIMIT+x} ]; then sed -i "s/; default_se
 if [ ! -z ${CYPHT_DEFAULT_SETTING_GITHUB_SINCE+x} ]; then sed -i "s/; default_setting_github_since=.*/default_setting_github_since=${CYPHT_DEFAULT_SETTING_GITHUB_SINCE}/" config.ini; fi
 if [ ! -z ${CYPHT_DEFAULT_SETTING_INLINE_MESSAGE+x} ]; then sed -i "s/; default_setting_inline_message=.*/default_setting_inline_message=${CYPHT_DEFAULT_SETTING_INLINE_MESSAGE}/" config.ini; fi
 if [ ! -z ${CYPHT_DEFAULT_SETTING_ENABLE_KEYBOARD_SHORTCUTS+x} ]; then sed -i "s/; default_setting_enable_keyboard_shortcuts=.*/default_setting_enable_keyboard_shortcuts=${CYPHT_DEFAULT_SETTING_ENABLE_KEYBOARD_SHORTCUTS}/" config.ini; fi
+if [ ! -z ${CYPHT_DEFAULT_SETTING_ENABLE_SIEVE_FILTER+x} ]; then sed -i "s/; default_setting_enable_sieve_filter=.*/default_setting_enable_sieve_filter=${CYPHT_DEFAULT_SETTING_ENABLE_SIEVE_FILTER}/" config.ini; fi
 
 
 #

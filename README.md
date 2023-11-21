@@ -132,6 +132,7 @@ See [hm3.sample.ini](https://github.com/cypht-org/cypht/blob/master/hm3.sample.i
 * **CYPHT_MODULE_INLINE_MESSAGE** : Enable/disable support for viewing messages in an inline reading-pane rather than new page *(default : enable)*
 * **CYPHT_MODULE_IMAP_FOLDERS** : Enable/disable support for adding/renaming/deleting folders in IMAP accounts *(default : enable)*
 * **CYPHT_MODULE_KEYBOARD_SHORTCUTS** : Enable/disable support for keyboard shortcuts for navigations and actions *(default : enable)*
+* **CYPHT_MODULE_SIEVEFILTERS** : Enable/disable support for configurable Sieve based IMAP filters *(default : disable)*
 * **CYPHT_MODULE_SITE** : Enable/disable support for site-specific overrides (without hacking core code) *(default : disable)*
 * **CYPHT_MODULE_DYNAMIC_LOGIN** : Enable/disable support for authenticating against populate mail services (only used if auth_type is dynamic) *(default : disable)*
 * **CYPHT_MODULE_API_LOGIN** : Enable/disable support for API based login that returns JSON response *(default : disable)*
@@ -174,4 +175,5 @@ See [hm3.sample.ini](https://github.com/cypht-org/cypht/blob/master/hm3.sample.i
 * **CYPHT_DEFAULT_SETTING_GITHUB_SINCE** : Default for time limit for GitHub notifications *(default : '-1 weeks')*
 * **CYPHT_DEFAULT_SETTING_INLINE_MESSAGE** : Default for displaying message details inline from message list *(default : false)*
 * **CYPHT_DEFAULT_SETTING_ENABLE_KEYBOARD_SHORTCUTS** : Default for enabling keyboard shortcuts *(default : 1)*
+* **CYPHT_DEFAULT_SETTING_ENABLE_SIEVE_FILTER** : Default for enabling configurable Sieve based IMAP filters *(default : false)*
 
