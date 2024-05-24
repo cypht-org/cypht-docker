@@ -1,6 +1,10 @@
 ## Cypht
 
-This is the official docker image of [Cypht](https://cypht.org/).
+This was the official Docker image builder of [Cypht](https://cypht.org/). It is being replaced:
+- [Docker-related code will be part of the main Cypht repository](https://github.com/cypht-org/cypht/pull/1001) so https://github.com/cypht-org/cypht-docker/ will be deprecated.
+- https://hub.docker.com/u/cypht will replace https://hub.docker.com/r/sailfrog/cypht-docker as per https://github.com/cypht-org/cypht/issues/1016
+- Here is background info: https://github.com/cypht-org/cypht-docker/issues/31
+
 
 ### Features of this image
 
